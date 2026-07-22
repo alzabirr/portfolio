@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { getConfigData } from "../data/configReader";
 import { FaReact, FaPython, FaFigma, FaGitAlt, FaGithub } from "react-icons/fa6";
 import { SiDart, SiNetlify, SiFirebase, SiNextdotjs, SiMysql, SiAdobexd, SiJavascript, SiTypescript } from "react-icons/si";
@@ -39,70 +38,36 @@ const hoverColors = {
 
 export default function Card() {
   const configData = getConfigData();
-  const projects = configData.projects;
-
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const svgClass = isHovered
-    ? "w-6 h-6 text-gray-500 transition delay-150"
-    : "w-6 h-6 text-gray-300";
+  const skills = configData.skills || [];
 
   return (
     <>
-      <div className="px-2">
+      <div className="px-2 mt-4">
         <div className="flex flex-col bg-gray-100 rounded-lg px-5 py-5 ">
-          <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center justify-between mb-4">
             <div className="font-medium text-lg flex items-center gap-x-2">
               Tech Stack
             </div>
           </div>
-          <div className="flex flex-col">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="drop-shadow-md card bg-white rounded-lg px-5 py-3 gap-x-3 flex flex-col md:flex-none md:flex-row border border-gray-200"
-              >
-
-                <div className="flex flex-col justify-center">
-                  <h1 className="font-medium text-lg">
-                    {project["project-name"]}
-                  </h1>
-                  <p className="text-gray-500 text-md">
-                    {project["project-desc"]}
-                  </p>
-                  {project["tech-stack"] && (
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {project["tech-stack"].map((tech) => {
-                        const Icon = iconMap[tech.toLowerCase()];
-                        const hoverClass = hoverColors[tech.toLowerCase()] || "hover:text-black";
-                        return Icon ? (
-                          <div key={tech} className="relative group flex items-center justify-center">
-                            <div className={`bg-gray-100 p-1.5 rounded-md text-gray-700 transition-colors duration-200 ${hoverClass}`}>
-                              <Icon size={18} />
-                            </div>
-                            <span className="absolute bottom-full mb-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded shadow-md whitespace-nowrap transition-all duration-200 z-10 pointer-events-none">
-                              {tech}
-                            </span>
-                          </div>
-                        ) : (
-                          <span key={tech} className="bg-gray-100 px-2 py-0.5 rounded text-xs text-gray-600 font-medium">
-                            {tech}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  )}
+          <div className="flex flex-wrap gap-2.5">
+            {skills.map((tech) => {
+              const Icon = iconMap[tech.toLowerCase()];
+              const hoverClass = hoverColors[tech.toLowerCase()] || "hover:text-black";
+              return Icon ? (
+                <div key={tech} className="relative group flex items-center justify-center">
+                  <div className={`bg-white p-2.5 rounded-lg text-gray-700 shadow-sm border border-gray-200 transition-colors duration-200 cursor-pointer ${hoverClass}`}>
+                    <Icon size={20} />
+                  </div>
+                  <span className="absolute bottom-full mb-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded shadow-md whitespace-nowrap transition-all duration-200 z-10 pointer-events-none">
+                    {tech}
+                  </span>
                 </div>
-              </div>
-            ))}
+              ) : (
+                <span key={tech} className="bg-white px-2.5 py-1 rounded-lg text-xs text-gray-600 font-medium border border-gray-200 shadow-sm">
+                  {tech}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -23,15 +23,20 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <div className="px-7 py-7 flex flex-col flex-col-reverse md:flex md:flex-row md:items-center md:justify-between pt-3">
-        <div className="flex flex-col gap-y-2">
-          <h1 className="text-4xl md:text-4xl font-semibold text-center md:text-left tracking-tighter">
+      <div className="px-7 py-7 flex flex-col md:flex-row-reverse items-center justify-between gap-6 pt-3">
+        <div className="rounded-full p-1 flex items-center justify-center flex-shrink-0 -mt-1 md:-mt-2">
+          <div className="w-40 h-40 md:w-44 md:h-44 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 border-2 flex items-center justify-center overflow-hidden shadow-inner">
+            <img src={profile} alt="Profile" className="w-full h-full object-cover rounded-full" />
+          </div>
+        </div>
+        <div className="flex flex-col gap-y-2 text-center md:text-left items-center md:items-start">
+          <h1 className="text-4xl md:text-4xl font-semibold tracking-tighter">
             I'm {configData.name}
           </h1>
-          <p className="md:w-3/4 text-lg text-gray-500 text-center md:text-left font-normal tracking-tight">
+          <p className="md:w-3/4 text-lg text-gray-500 font-normal tracking-tight">
             {configData.desc}
           </p>
-          <div className="flex items-center text-center md:text-left justify-center md:justify-normal pt-6">
+          <div className="flex items-center justify-center md:justify-start pt-6">
             <a href={configData.hireMeLink} className="md:hidden"><button
               type="button"
               className="gap-x-1 before:ease relative overflow-hidden border border-[#000000] bg-[#050708] text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center mr-2 mb-2"
@@ -53,11 +58,6 @@ export default function Profile() {
               Hire Me
             </button></a>
             <CopyEmailButton />
-          </div>
-        </div>
-        <div className="rounded-full p-2 flex items-center justify-center mb-7">
-          <div className="w-36 h-36 rounded-full bg-gradient-to-b from-gray-100 to-gray-300 border-2 flex items-center justify-center">
-            <img src={profile} alt="" className="max-w-full max-h-full " />
           </div>
         </div>
       </div>

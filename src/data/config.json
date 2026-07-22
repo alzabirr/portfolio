@@ -1,31 +1,63 @@
 {
   "job": "Flutter / Frontend Developer",
   "name": "Al Zabir",
-  "desc": "Working on Flutter app development projects, currently learning Python & AI/ML. Looking to collaborate on open-source & real-world apps.",
+  "desc": "Working on Flutter app development projects, currently learning Python & AI/ML. Looking to collaborate on open source & real world apps.",
   "aboutDesc": "Hi, I’m Al Zabir. I am a Flutter developer and web designer focused on building simple, clean, and useful mobile apps, websites, and on-device applications. I work with Flutter, Python, and AI/ML. I enjoy turning ideas into real, working applications through code and practical implementation.",
   "email": "alzabirhussain@gmail.com",
   "status": "on",
   "hireMeLink": "https://www.linkedin.com/in/alzabirr/",
   "projects": [
     {
-      "project-image-url": "https://github.com/kaanayyildiz/benfolio/assets/39806458/9d826c30-0135-4620-8e0f-bc3460848e5e",
-      "project-name": "",
-      "project-desc": "",
-      "tech-stack": [
-        "Dart",
-        "React",
-        "Python",
-        "Netlify",
-        "Firebase",
-        "Next JS",
-        "MySQL",
-        "Figma",
-        "Adobe XD",
-        "Git",
-        "GitHub",
-        "JavaScript",
-        "TypeScript"
-      ]
+      "project-image-url": "snapi_.png",
+      "project-name": "Snapi",
+      "project-desc": "An intelligent screenshot management app that automatically detects captures, extracts text using offline OCR, and categorizes them with advanced search, voice notes, and recovery options.",
+      "download-link": "https://play.google.com/store/apps/details?id=com.enyxd.snapi"
+    },
+    {
+      "project-image-url": "nappy.png",
+      "project-name": "Quick Nap",
+      "project-desc": "A retro-style smart alarm clock, power nap timer, and sleep cycle alarm designed to defeat sleep inertia and wake up your brain instantly through fun mini-games. Includes a personal dream diary and sleep coaching guides."
+    },
+    {
+      "project-image-url": "Medi reminder.png",
+      "project-name": "MediRemind",
+      "project-desc": "A simple, beautiful, and reliable medication reminder app designed to help you stay on track with your Medicine . Set custom schedules, add dose instructions (e.g. before/after meal), and track your progress securely on-device.",
+      "download-link": "https://play.google.com/store/apps/details?id=com.enyxd.medi"
+    },
+    {
+      "project-image-url": "upgrade.png",
+      "project-name": "Upgrade Flutter Starter Kit",
+      "project-desc": "A modern, production-ready Flutter Starter Kit designed to accelerate app development with clean architecture, reusable components, and scalable structure.",
+      "project-link": "https://pub.dev/packages/upgrade_flutter_starter_kit"
+    }
+  ],
+  "skills": [
+    "Dart",
+    "React",
+    "Python",
+    "Netlify",
+    "Firebase",
+    "Next JS",
+    "MySQL",
+    "Figma",
+    "Adobe XD",
+    "Git",
+    "GitHub",
+    "JavaScript",
+    "TypeScript"
+  ],
+  "services": [
+    {
+      "title": "Flutter App Development",
+      "desc": "Building modern, high performance cross-platform mobile applications for Android & iOS with clean architecture and scalable code."
+    },
+    {
+      "title": "Frontend Development",
+      "desc": "Developing clean, interactive, and responsive web applications using modern web technologies and frameworks."
+    },
+    {
+      "title": "UI/UX Design (Figma)",
+      "desc": "Designing sleek, modern, and user-friendly mobile and web interface prototypes using Figma."
     }
   ],
   "social": [

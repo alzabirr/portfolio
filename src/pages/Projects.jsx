@@ -1,5 +1,53 @@
-import CopyEmailButton from "../components/CopyEmailButton";
 import { getConfigData } from "../data/configReader";
+import { FaReact, FaPython, FaFigma, FaGitAlt, FaGithub, FaGooglePlay } from "react-icons/fa6";
+import { SiDart, SiNetlify, SiFirebase, SiNextdotjs, SiMysql, SiAdobexd, SiJavascript, SiTypescript } from "react-icons/si";
+
+// Import project images
+import snapiImg from "../assets/projects/snapi_.png";
+import nappyImg from "../assets/projects/nappy.png";
+import mediImg from "../assets/projects/Medi reminder.png";
+import upgradeImg from "../assets/projects/upgrade.png";
+
+const projectImages = {
+  "snapi_.png": snapiImg,
+  "nappy.png": nappyImg,
+  "Medi reminder.png": mediImg,
+  "upgrade.png": upgradeImg
+};
+
+const iconMap = {
+  "dart": SiDart,
+  "react": FaReact,
+  "python": FaPython,
+  "netlify": SiNetlify,
+  "firebase": SiFirebase,
+  "next js": SiNextdotjs,
+  "next.js": SiNextdotjs,
+  "mysql": SiMysql,
+  "figma": FaFigma,
+  "adobe xd": SiAdobexd,
+  "git": FaGitAlt,
+  "github": FaGithub,
+  "javascript": SiJavascript,
+  "typescript": SiTypescript
+};
+
+const hoverColors = {
+  "dart": "hover:text-[#0175C2]",
+  "react": "hover:text-[#61DAFB]",
+  "python": "hover:text-[#3776AB]",
+  "netlify": "hover:text-[#00C7B7]",
+  "firebase": "hover:text-[#FFCA28]",
+  "next js": "hover:text-[#000000]",
+  "next.js": "hover:text-[#000000]",
+  "mysql": "hover:text-[#4479A1]",
+  "figma": "hover:text-[#F24E1E]",
+  "adobe xd": "hover:text-[#FF61F6]",
+  "git": "hover:text-[#F05032]",
+  "github": "hover:text-[#181717]",
+  "javascript": "hover:text-[#F7DF1E]",
+  "typescript": "hover:text-[#3178C6]"
+};
 
 export default function Projects() {
   const configData = getConfigData();
@@ -11,49 +59,75 @@ export default function Projects() {
           Projects
         </h1>
       </div>
-      <div className="px-7 py-7 flex flex-col flex-col-reverse md:flex md:flex-row md:items-center md:justify-between pt-3">
-        <div className="flex flex-col gap-y-4">
-          <h1 className="text-4xl md:text-4xl font-semibold text-center md:text-left tracking-tighter">
-            My Projects
-          </h1>
-          <p className="text-lg text-gray-500 text-center md:text-left font-normal tracking-tight">
-            I am currently working on updating this section with my latest Flutter and web development projects. Check back soon!
-          </p>
-        </div>
+      <div className="px-7 pb-4 flex flex-col gap-y-4">
+        <h1 className="text-4xl font-semibold tracking-tighter">
+          My Projects
+        </h1>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-3xl font-semibold">Let's work together.</h1>
-        <p className="text-md font-normal text-gray-500 text-center px-3">
-          Creating user experience and visual appealing design
-        </p>
-      </div>
-      <div className="flex flex-col flex-col-reverse md:flex md:flex-row md:items-center justify-center py-8">
-        <div className="flex flex-col gap-y-2">
-
-          <div className="flex items-center text-center md:text-left justify-center md:justify-normal">
-            <a href={configData.hireMeLink}><button
-              type="button"
-              className="gap-x-1 before:ease relative overflow-hidden border border-[#000000] bg-[#050708] text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center mr-2 mb-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+      <div className="px-7 pb-7 flex flex-col gap-y-6">
+        {configData.projects.map((project, index) => (
+          <div key={index} className="bg-gray-50 rounded-xl p-5 border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-start">
+            {project["project-image-url"] && (
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 border border-gray-200 shadow-sm flex items-center justify-center p-1">
+                <img 
+                  src={projectImages[project["project-image-url"]] || project["project-image-url"]} 
+                  alt={project["project-name"]} 
+                  className="max-w-full max-h-full object-contain"
                 />
-              </svg>
-              Hire Me
-            </button></a>
-            <CopyEmailButton />
+              </div>
+            )}
+            <div className="flex flex-col gap-y-3 flex-grow">
+              <h2 className="text-2xl font-semibold text-gray-800">{project["project-name"]}</h2>
+              <p className="text-gray-600 text-md leading-relaxed">{project["project-desc"]}</p>
+              {project["tech-stack"] && (
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {project["tech-stack"].map((tech) => {
+                    const Icon = iconMap[tech.toLowerCase()];
+                    const hoverClass = hoverColors[tech.toLowerCase()] || "hover:text-black";
+                    return Icon ? (
+                      <div key={tech} className="relative group flex items-center justify-center">
+                        <div className={`bg-white p-2 rounded-lg text-gray-700 shadow-sm border border-gray-100 transition-colors duration-200 ${hoverClass}`}>
+                          <Icon size={20} />
+                        </div>
+                        <span className="absolute bottom-full mb-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible bg-gray-800 text-white text-xs font-medium px-2 py-1 rounded shadow-md whitespace-nowrap transition-all duration-200 z-10 pointer-events-none">
+                          {tech}
+                        </span>
+                      </div>
+                    ) : (
+                      <span key={tech} className="bg-white px-2.5 py-1 rounded-lg text-xs text-gray-600 font-medium border border-gray-100 shadow-sm">
+                        {tech}
+                      </span>
+                    );
+                  })}
+                </div>
+              )}
+              {project["download-link"] && (
+                <a
+                  href={project["download-link"]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-x-2 bg-[#050708] hover:bg-black text-white font-medium rounded-lg text-xs px-3.5 py-2 mt-2 transition-all w-fit shadow-md"
+                >
+                  <FaGooglePlay size={14} />
+                  Download App
+                </a>
+              )}
+              {project["project-link"] && (
+                <a
+                  href={project["project-link"]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-x-2 bg-[#050708] hover:bg-black text-white font-medium rounded-lg text-xs px-3.5 py-2 mt-2 transition-all w-fit shadow-md"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-3.5 h-3.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  View Package
+                </a>
+              )}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </>
   );
