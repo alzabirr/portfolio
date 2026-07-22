@@ -1,0 +1,45 @@
+{
+  "job": "Flutter / Frontend Developer",
+  "name": "Al Zabir",
+  "desc": "Working on Flutter app development projects, currently learning Python & AI/ML. Looking to collaborate on open-source & real-world apps.",
+  "aboutDesc": "Hi, I’m Al Zabir. I am a Flutter developer and web designer focused on building simple, clean, and useful mobile apps, websites, and on-device applications. I work with Flutter, Python, and AI/ML. I enjoy turning ideas into real, working applications through code and practical implementation.",
+  "email": "alzabirhussain@gmail.com",
+  "status": "on",
+  "hireMeLink": "https://www.linkedin.com/in/alzabirr/",
+  "projects": [
+    {
+      "project-image-url": "https://github.com/kaanayyildiz/benfolio/assets/39806458/9d826c30-0135-4620-8e0f-bc3460848e5e",
+      "project-name": "",
+      "project-desc": "",
+      "tech-stack": [
+        "Dart",
+        "React",
+        "Python",
+        "Netlify",
+        "Firebase",
+        "Next JS",
+        "MySQL",
+        "Figma",
+        "Adobe XD",
+        "Git",
+        "GitHub",
+        "JavaScript",
+        "TypeScript"
+      ]
+    }
+  ],
+  "social": [
+    {
+      "icon": "FaGithub",
+      "link": "https://github.com/alzabirr?tab=overview&from=2026-07-01&to=2026-07-21"
+    },
+    {
+      "icon": "FaLinkedinIn",
+      "link": "https://www.linkedin.com/in/alzabirr/"
+    },
+    {
+      "icon": "FaInstagram",
+      "link": "https://instagram.com"
+    }
+  ]
+}
